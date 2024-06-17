@@ -48,6 +48,10 @@ Apresentamos o Aphonso Bet, a plataforma de apostas online **feita sob medida pa
 6. Crie um superusuário
 7. Execute a aplicação
 
+Obs:
+
+* senha admin: qwe123
+
 ### Atividades
 
 #### Orientações
