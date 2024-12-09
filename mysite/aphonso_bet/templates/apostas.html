@@ -4,10 +4,10 @@
 
 {% block content %}
 
-
 <div class="container-fluid bg-dark-subtle py-5">
     <h1 class="h3 mb-3 fw-normal">Apostas</h1>
 
+    {% if apostas %}
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -21,7 +21,6 @@
                     <th scope="col">Time B</th>
                     <th scope="col">Valor</th>
                     <th scope="col">Total</th>
-                    <!-- <th scope="col">Apostado em</th> -->
                     <th scope="col">Resultado A</th>
                     <th scope="col">Resultado B</th>
                     <th scope="col">Finalizado</th>
@@ -31,24 +30,27 @@
             <tbody>
                 {% for aposta in apostas %}
                 <tr>
-                    <th>{{aposta.id}}</th>
-                    <td>{{aposta.jogo.local}} {{aposta.jogo.dataEHora}}</td>
-                    <td>{{aposta.jogo.campeonato.descricao}}</td>
-                    <td>{{aposta.jogo.timeCasa.nome}}</td>
-                    <td>{{aposta.resultadoCasa}}</td>
-                    <td>{{aposta.resultadoFora}}</td>
-                    <td>{{aposta.jogo.timeFora.nome}}</td>
-                    <td>{{aposta.valor_aposta}}</td>
-                    <td>{{aposta.total_premio}}</td>
-                    <!-- <td>{{aposta.criado_em}}</td> -->
-                    <td>{{aposta.jogo.resultadoCasa}}</td>
-                    <td>{{aposta.jogo.resultadoFora}}</td>
-                    <td>{{aposta.jogo.finalizado}}</td>
-                    <td>{{aposta.quitado}}</td>
+                    <th>{{ aposta.id }}</th>
+                    <td>{{ aposta.jogo.local }} {{ aposta.jogo.dataEHora }}</td>
+                    <td>{{ aposta.jogo.campeonato.descricao }}</td>
+                    <td>{{ aposta.jogo.timeCasa.nome }}</td>
+                    <td>{{ aposta.resultadoCasa }}</td>
+                    <td>{{ aposta.resultadoFora }}</td>
+                    <td>{{ aposta.jogo.timeFora.nome }}</td>
+                    <td>{{ aposta.valor_aposta }}</td>
+                    <td>{{ aposta.total_premio }}</td>
+                    <td>{{ aposta.jogo.resultadoCasa }}</td>
+                    <td>{{ aposta.jogo.resultadoFora }}</td>
+                    <td>{{ aposta.jogo.finalizado }}</td>
+                    <td>{{ aposta.quitado }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+    {% else %}
+    <p class="text-center text-muted">Nenhuma aposta encontrada!</p>
+    {% endif %}
 </div>
+
 {% endblock %}
