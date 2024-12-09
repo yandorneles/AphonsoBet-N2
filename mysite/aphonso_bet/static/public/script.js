@@ -2,7 +2,6 @@ function mostraMsgValidacao(msg){
   alert(msg);
 }
 
-
 (() => {
   const formApostar = document.querySelector("#formApostar");
   if (formApostar) {
@@ -18,7 +17,7 @@ function mostraMsgValidacao(msg){
         return false;
       }
       else if(parseFloat(event.target.inputTimeCasaPontos.value) < 0){
-        mostraMsgValidacao("Os pontos não podem zero igual a zero!");
+        mostraMsgValidacao("Os pontos não podem ser negativos!");
         return false;
       }
       else if(parseFloat(event.target.inputTimeForaId.value) == 0){
@@ -26,10 +25,10 @@ function mostraMsgValidacao(msg){
         return false;
       }
       else if(parseFloat(event.target.inputTimeForaPontos.value) < 0){
-        mostraMsgValidacao("Os pontos não podem zero igual a zero!");
+        mostraMsgValidacao("Os pontos não podem ser negativos!");
         return false;
       }
-      else if(parseFloat(event.target.inputValor.value) == 0){
+      else if(parseFloat(event.target.inputValor.value) <= 0){
         mostraMsgValidacao("O valor da aposta deve ser maior que zero!");
         return false;
       }
