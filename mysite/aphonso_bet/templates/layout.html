@@ -118,7 +118,7 @@
                 <span class="me-3">Olá <strong>{{ user.get_full_name }}</strong>, seu saldo é {{carteira.moeda.simbolo}}
                     {{carteira.saldo}}</span>
                 <a href="{% url 'pagina_apostas' %}" class="btn btn-primary me-3">Apostas</a>
-                <a href="{% url 'pagina_logout' %}" class="btn btn-secondary">Sair</a>
+                <a href="{% url 'pagina_logout' %}" class="btn btn-danger">Sair</a>
 
                 {% endif %}
             </div>
