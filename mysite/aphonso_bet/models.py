@@ -117,3 +117,6 @@ class Aposta(ModelAbstrato):
     resultadoCasa = models.IntegerField(default = 0)
     resultadoFora = models.IntegerField(default = 0)
     quitado = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.id} {self.usuario.username} {self.jogo.id} {self.valor_aposta}"
